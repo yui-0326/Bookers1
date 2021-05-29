@@ -14,11 +14,22 @@
         <td>リーダブルコード</td>
         <td>より良いコードを書くためのシンプルで実践的なテクニック</td>
       </tr>
+       <tr>
+        <td>トラブル知らずのシステム設計</td>
+        <td>システム設計の要点を図解で説明してくれます</td>
+      </tr>
     </tbody>
   </table>
   <h2>New book</h2>
-    <h4>title</h4>
-
-    <h4>body</h4>
-
+  <%= form_with model:@book, local:true do |f| %>
+  <div class="field">
+    <h4>Title</h4>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <h4>Body</h4>
+    <%= f.text_area :body %>
+  </div>
+    <%= f.submit 'CreateBook' %>
+  <% end %>
 </body>
